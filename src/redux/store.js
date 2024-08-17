@@ -1,34 +1,35 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import {
-//   persistStore,
-//   persistReducer,
-//   FLUSH,
-//   REHYDRATE,
-//   REGISTER,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-// } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
+import { configureStore } from '@reduxjs/toolkit';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  REGISTER,
+  PAUSE,
+  PERSIST,
+  PURGE,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { campingsReducer } from './campings/campingsSlice';
 
-// const persistConfig = {
-//   key: 'auth',
-//   storage,
-//   whitelist: ['token'],
-// };
+const persistConfig = {
+  key: 'campings',
+  storage,
+  //   whitelist: ['token'],
+};
 
-// export const store = configureStore({
-//   reducer: {
-//     auth: persistReducer(persistConfig, authReducer),
-//     contacts: contactsReducer,
-//     filters: filtersReducer,
-//   },
-//   middleware: getDefaultMiddleware =>
-//     getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, REGISTER, PURGE],
-//       },
-//     }),
-// });
+const persistedReducer = persistReducer(persistConfig, campingsReducer);
 
-// export const persistor = persistStore(store);
+export const store = configureStore({
+  reducer: {
+    campings: persistedReducer,
+  },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, REGISTER, PURGE],
+      },
+    }),
+});
+
+export const persistor = persistStore(store);
