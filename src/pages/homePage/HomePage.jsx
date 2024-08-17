@@ -1,11 +1,11 @@
 import DocumentTitle from '../../components/documentTitle/DocumentTitle';
-import SearchButton from '../../components/searchButton/SearchButton';
+import LoadMoreButton from '../../components/loadMoreButton/LoadMoreButton';
 
 const HomePage = () => {
   return (
     <>
       <DocumentTitle>Home</DocumentTitle>
-      <SearchButton />
+      <LoadMoreButton />
     </>
   );
 };

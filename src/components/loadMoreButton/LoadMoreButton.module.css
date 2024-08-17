@@ -1,0 +1,15 @@
+.loadMoreButton {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: #101828;
+  border: 1px solid rgba(71, 84, 103, 0.2);
+  border-radius: 200px;
+  padding: 16px 32px;
+  background-color: transparent;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loadMoreButton:hover {
+  border: 1px solid #e44848;
+}
