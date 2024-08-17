@@ -1,10 +1,19 @@
 import ShowMoreButton from '../showMoreButton/ShowMoreButton.jsx';
 import icons from '../../images/icons/icons.svg';
 import css from './CatalogItem.module.css';
+import Categories from '../categories/Categories.jsx';
 
 const CatalogItem = ({ campings }) => {
-  const { gallery, name, price, rating, reviews, location, description } =
-    campings;
+  const {
+    gallery,
+    name,
+    price,
+    rating,
+    reviews,
+    location,
+    description,
+    details,
+  } = campings;
 
   return (
     <li className={css.catalogItem}>
@@ -36,7 +45,7 @@ const CatalogItem = ({ campings }) => {
           </div>
         </div>
         <p className={css.catalogItemDescription}>{description}</p>
-
+        <Categories details={details} />
         <ShowMoreButton />
       </div>
     </li>

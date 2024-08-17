@@ -1,0 +1,21 @@
+.categoryItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background-color: #f2f4f7;
+}
+
+.categoryIcon {
+  fill: transparent;
+  stroke: #101828;
+  margin-right: 8px;
+}
+
+.categoryDescription {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
