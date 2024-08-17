@@ -5,6 +5,8 @@ const initialState = {
   items: [],
   isLoading: false,
   isError: null,
+  page: 1,
+  itemsPerPage: 4,
 };
 
 const isPending = action =>
@@ -27,6 +29,14 @@ const rejectedReducer = (state, action) => {
 const campingsSlice = createSlice({
   name: 'campings',
   initialState,
+  reducers: {
+    loadMore: state => {
+      state.page += 1;
+    },
+    resetPage: state => {
+      state.page = 1;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchCampings.fulfilled, (state, action) => {
@@ -39,4 +49,5 @@ const campingsSlice = createSlice({
   },
 });
 
+export const { loadMore, resetPage } = campingsSlice.actions;
 export const campingsReducer = campingsSlice.reducer;

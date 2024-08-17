@@ -1,11 +1,7 @@
 import css from './SendButton.module.css';
 
 const SendButton = () => {
-  return (
-    <button type="submit" className={css.sendButton}>
-      Send
-    </button>
-  );
+  return <button className={css.sendButton}>Send</button>;
 };
 
 export default SendButton;
