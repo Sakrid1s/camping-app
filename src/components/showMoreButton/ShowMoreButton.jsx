@@ -2,11 +2,9 @@ import css from './ShowMoreButton.module.css';
 
 const ShowMoreButton = () => {
   return (
-    <>
-      <button type="button" className={css.ShowMoreButton}>
-        Show more
-      </button>
-    </>
+    <button type="button" className={css.showMoreButton}>
+      Show more
+    </button>
   );
 };
 

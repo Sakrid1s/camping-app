@@ -1,0 +1,34 @@
+.catalogItem {
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.catalogItemImage {
+  width: 290px;
+  height: 310px;
+  border-radius: 10px;
+  margin-right: 24px;
+}
+
+.catalogItemMainInfo {
+  display: flex;
+}
+
+.catalogItemTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+  margin-right: 248px;
+}
+
+.catalogItemPrice {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+  margin-right: 10px;
+}

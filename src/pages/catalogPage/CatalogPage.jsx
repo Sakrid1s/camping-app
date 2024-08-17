@@ -3,16 +3,17 @@ import DocumentTitle from '../../components/documentTitle/DocumentTitle';
 import { useEffect } from 'react';
 import { fetchCampings } from '../../redux/campings/operations';
 import {
-  selectCampings,
+  // selectCampings,
   selectIsLoading,
   selectError,
 } from '../../redux/campings/selectors.js';
 import Loader from '../../components/loader/Loader.jsx';
 import Container from '../../components/container/Container.jsx';
+import LoadMoreButton from '../../components/loadMoreButton/LoadMoreButton.jsx';
+import CatalogList from '../../components/catalogList/CatalogList.jsx';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  const campings = useSelector(selectCampings);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
@@ -25,11 +26,8 @@ const CatalogPage = () => {
       <DocumentTitle>Catalog</DocumentTitle>
       {isLoading && <Loader />}
       {error && <p>Error: {error}</p>}
-      <ul>
-        {campings.map(camping => (
-          <li key={camping._id}>{camping.name}</li>
-        ))}
-      </ul>
+      <CatalogList />
+      <LoadMoreButton />
     </Container>
   );
 };

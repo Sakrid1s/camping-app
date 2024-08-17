@@ -1,19 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
-import './App.css';
-
-import HomePage from './pages/homePage/HomePage.jsx';
-import CatalogPage from './pages/catalogPage/CatalogPage.jsx';
-
 import Loader from './components/loader/Loader';
 
+import HomePage from './pages/homePage/HomePage.jsx';
+const CatalogPage = lazy(() => import('./pages/catalogPage/CatalogPage.jsx'));
 const FavoritesPage = lazy(() =>
   import('./pages/favoritesPage/FavoritesPage.jsx')
 );
-const NotFoundPage = lazy(() =>
-  import('./pages/notFoundPage/NotFoundPage.jsx')
-);
+
+import './App.css';
 
 function App() {
   return (
@@ -23,7 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>
     </div>
