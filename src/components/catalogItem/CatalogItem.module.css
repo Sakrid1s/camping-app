@@ -15,6 +15,7 @@
 
 .catalogItemMainInfo {
   display: flex;
+  margin-bottom: 8px;
 }
 
 .catalogItemTitle {
@@ -31,4 +32,58 @@
   line-height: 1.25;
   color: #101828;
   margin-right: 10px;
+}
+
+.catalogItemFavoriteButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+.catalogItemFavoriteIcon {
+  fill: transparent;
+  stroke: #101828;
+  margin-right: 4px;
+}
+
+.catalogItemSupInfo {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.catalogItemReview {
+  font-size: 16px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #101828;
+  margin-right: 16px;
+}
+
+.catalogItemLocation {
+  display: flex;
+}
+
+.catalogItemStarIcon {
+  fill: gold;
+}
+
+.catalogItemLocation {
+  font-size: 16px;
+  color: #101828;
+}
+
+.catalogItemLocationIcon {
+  fill: transparent;
+  stroke: #101828;
+  margin-right: 4px;
+}
+
+.catalogItemDescription {
+  max-width: 522px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 24px;
 }

@@ -3,7 +3,6 @@ import DocumentTitle from '../../components/documentTitle/DocumentTitle';
 import { useEffect } from 'react';
 import { fetchCampings } from '../../redux/campings/operations';
 import {
-  // selectCampings,
   selectIsLoading,
   selectError,
 } from '../../redux/campings/selectors.js';
