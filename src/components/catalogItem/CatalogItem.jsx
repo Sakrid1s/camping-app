@@ -17,7 +17,7 @@ const CatalogItem = ({ campings }) => {
 
   return (
     <li className={css.catalogItem}>
-      <div>
+      <div className={css.catalogImageContainer}>
         <img src={gallery[0]} alt="Camping" className={css.catalogItemImage} />
       </div>
       <div>

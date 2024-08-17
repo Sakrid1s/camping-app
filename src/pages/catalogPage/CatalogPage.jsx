@@ -7,7 +7,6 @@ import {
   selectError,
 } from '../../redux/campings/selectors.js';
 import Loader from '../../components/loader/Loader.jsx';
-import Container from '../../components/container/Container.jsx';
 import LoadMoreButton from '../../components/loadMoreButton/LoadMoreButton.jsx';
 import CatalogList from '../../components/catalogList/CatalogList.jsx';
 
@@ -21,13 +20,13 @@ const CatalogPage = () => {
   }, [dispatch]);
 
   return (
-    <Container>
+    <section>
       <DocumentTitle>Catalog</DocumentTitle>
       {isLoading && <Loader />}
       {error && <p>Error: {error}</p>}
       <CatalogList />
       <LoadMoreButton />
-    </Container>
+    </section>
   );
 };
 

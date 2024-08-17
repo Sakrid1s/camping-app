@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
+import { lazy, Suspense } from 'react';
 
-import Loader from './components/loader/Loader';
+import Container from './components/container/Container.jsx';
+import Loader from './components/loader/Loader.jsx';
 
 import HomePage from './pages/homePage/HomePage.jsx';
 const CatalogPage = lazy(() => import('./pages/catalogPage/CatalogPage.jsx'));
@@ -13,7 +14,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <Container>
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -22,7 +23,7 @@ function App() {
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>
-    </div>
+    </Container>
   );
 }
 
