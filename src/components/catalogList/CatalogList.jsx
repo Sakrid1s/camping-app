@@ -6,6 +6,7 @@ import CatalogItem from '../catalogItem/CatalogItem';
 
 const CatalogList = () => {
   const campings = useSelector(selectCampings);
+
   return (
     <ul>
       {campings.map(camping => (

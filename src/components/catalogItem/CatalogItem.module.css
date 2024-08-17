@@ -7,12 +7,14 @@
 }
 
 .catalogImageContainer {
+  min-width: 290px;
   margin-right: 24px;
 }
 
 .catalogItemImage {
   width: 290px;
   height: 310px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
