@@ -1,7 +1,7 @@
 const FiltersLocation = () => {
   return (
     <div>
-      <h3>Location</h3>
+      <p>Location</p>
       <input type="text" placeholder="City" />
     </div>
   );

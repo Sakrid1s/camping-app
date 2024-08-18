@@ -9,7 +9,7 @@ const Filters = () => {
   return (
     <section className={css.filtersSection}>
       <FiltersLocation />
-      <h3>Filters</h3>
+      <p className={css.filtersTitle}>Filters</p>
       <VehicleEquipment />
       <VehicleType />
       <SearchButton />

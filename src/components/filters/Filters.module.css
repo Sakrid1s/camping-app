@@ -1,3 +1,11 @@
 .filtersSection {
   margin-right: 64px;
+  min-width: 360px;
+}
+
+.filtersTitle {
+  font-weight: 500;
+  font-size: 16px;
+  color: #475467;
+  margin-bottom: 14px;
 }
