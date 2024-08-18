@@ -72,8 +72,10 @@ const CatalogItemModal = ({
           className={css.modalImage}
         />
       </div>
-      <div>
-        <p className={css.modalDescription}>{description}</p>
+      <p className={css.modalDescription}>{description}</p>
+      <div className={css.modalAdditionalInfo}>
+        <button>Features</button>
+        <button>Reviews</button>
       </div>
     </Modal>
   );

@@ -107,4 +107,21 @@
   font-weight: 400;
   font-size: 16px;
   color: #475467;
+  margin-bottom: 44px;
+}
+
+.modalAdditionalInfo {
+  position: relative; /* Додайте позицію relative для заголовка */
+  padding-bottom: 24px; /* Простір для лінії */
+  margin-bottom: 68px; /* Відступ після псевдоелемента */
+}
+
+.modalAdditionalInfo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(16, 24, 40, 0.2);
 }
