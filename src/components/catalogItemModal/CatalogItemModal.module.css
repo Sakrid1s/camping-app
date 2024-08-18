@@ -6,7 +6,6 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 9999;
   overflow: hidden; /* Забороняє скролінг за межами модалки */
 }
 
@@ -19,19 +18,93 @@
   width: 982px;
   max-height: 90vh; /* Обмежує висоту модалки, щоб вона не перевищувала екран */
   background: white;
-  padding: 20px;
+  padding: 40px;
   border-radius: 8px;
-  z-index: 10000;
   overflow-y: auto; /* Дозволяє прокручувати контент всередині модалки */
 }
 
-/* Кнопка закриття */
+.modalMainInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
 .closeButton {
   background-color: transparent;
   border: none;
-  font-size: 16px;
   cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  padding: 0;
+}
+
+.modalCloseIcon {
+  stroke: #101828;
+}
+
+.modalImageContainer {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.modalImage {
+  border-radius: 10px;
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+}
+
+.modalTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.modalSupInfo {
+  display: flex;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+.modalStarIcon {
+  fill: gold;
+  margin-right: 4px;
+}
+
+.modalReview {
+  font-size: 16px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #101828;
+  margin-right: 16px;
+}
+
+.modalLocation {
+  display: flex;
+}
+
+.modalLocationIcon {
+  fill: transparent;
+  stroke: #101828;
+  margin-right: 4px;
+}
+
+.modalLocation {
+  font-size: 16px;
+  color: #101828;
+}
+
+.modalPrice {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+  margin-right: 10px;
+  margin-bottom: 24px;
+}
+
+.modalDescription {
+  font-weight: 400;
+  font-size: 16px;
+  color: #475467;
 }

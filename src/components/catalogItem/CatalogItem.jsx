@@ -42,7 +42,7 @@ const CatalogItem = ({ campings }) => {
       <div>
         <div className={css.catalogItemMainInfo}>
           <h2 className={css.catalogItemTitle}>{name}</h2>
-          <div className={css.catalogPriveFavorite}>
+          <div className={css.catalogPriceFavorite}>
             <p className={css.catalogItemPrice}>€{price}</p>
             <button type="button" className={css.catalogItemFavoriteButton}>
               <svg

@@ -32,47 +32,48 @@ const CatalogItemModal = ({
       className={css.modalContent}
       overlayClassName={css.modalOverlay}
     >
-      <div className={css.catalogImageContainer}>
+      <div className={css.modalMainInfo}>
+        <h2 className={css.modalTitle}>{name}</h2>
+        <button onClick={onClose} className={css.closeButton}>
+          <svg width="32" height="32" className={css.modalCloseIcon}>
+            <use href={`${icons}#icon-close`} />
+          </svg>
+        </button>
+      </div>
+      <div className={css.modalSupInfo}>
+        <svg width="16" height="16" className={css.modalStarIcon}>
+          <use href={`${icons}#icon-star`} />
+        </svg>
+        <p className={css.modalReview}>
+          {rating}({reviews.length} Reviews)
+        </p>
+        <div className={css.modalLocation}>
+          <svg width="16" height="16" className={css.modalLocationIcon}>
+            <use href={`${icons}#icon-local`} />
+          </svg>
+          <p className={css.modalLocation}>{location}</p>
+        </div>
+      </div>
+      <p className={css.modalPrice}>€{price}</p>
+      <div className={css.modalImageContainer}>
         <img
           src={gallery[0]}
           alt={`Image of ${name}`}
-          className={css.catalogItemImage}
+          className={css.modalImage}
+        />
+        <img
+          src={gallery[1]}
+          alt={`Image of ${name}`}
+          className={css.modalImage}
+        />
+        <img
+          src={gallery[2]}
+          alt={`Image of ${name}`}
+          className={css.modalImage}
         />
       </div>
       <div>
-        <div className={css.catalogItemMainInfo}>
-          <h2 className={css.catalogItemTitle}>{name}</h2>
-          <div className={css.catalogPriveFavorite}>
-            <p className={css.catalogItemPrice}>€{price}</p>
-            <button type="button" className={css.catalogItemFavoriteButton}>
-              <svg
-                width="24"
-                height="24"
-                className={css.catalogItemFavoriteIcon}
-              >
-                <use href={`${icons}#icon-like`} />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div className={css.catalogItemSupInfo}>
-          <svg width="16" height="16" className={css.catalogItemStarIcon}>
-            <use href={`${icons}#icon-star`} />
-          </svg>
-          <p className={css.catalogItemReview}>
-            {rating}({reviews.length} Reviews)
-          </p>
-          <div className={css.catalogItemLocation}>
-            <svg width="16" height="16" className={css.catalogItemLocationIcon}>
-              <use href={`${icons}#icon-local`} />
-            </svg>
-            <p className={css.catalogItemLocation}>{location}</p>
-          </div>
-        </div>
-        <p className={css.catalogItemDescription}>{description}</p>
-        <button onClick={onClose} className={css.closeButton}>
-          Close
-        </button>
+        <p className={css.modalDescription}>{description}</p>
       </div>
     </Modal>
   );

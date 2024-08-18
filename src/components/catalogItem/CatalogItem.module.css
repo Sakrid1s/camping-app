@@ -31,7 +31,7 @@
   color: #101828;
 }
 
-.catalogPriveFavorite {
+.catalogPriceFavorite {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,6 @@
   font-size: 24px;
   line-height: 1.25;
   color: #101828;
-  margin-right: 10px;
 }
 
 .catalogItemFavoriteButton {
