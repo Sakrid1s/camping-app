@@ -91,6 +91,7 @@ const CatalogItem = ({ campings }) => {
           adults={adults}
           transmission={transmission}
           engine={engine}
+          campings={campings}
         />
       </div>
     </li>

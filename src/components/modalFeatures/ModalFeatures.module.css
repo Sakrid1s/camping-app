@@ -1,5 +1,6 @@
 .modalFeaturesSection {
   display: flex;
+  justify-content: space-between;
 }
 
 .categoriesVehicle {

@@ -19,6 +19,7 @@ const CatalogItemModal = ({
   adults,
   transmission,
   engine,
+  campings,
 }) => {
   const [activeTab, setActiveTab] = useState(null);
 
@@ -104,9 +105,10 @@ const CatalogItemModal = ({
           adults={adults}
           transmission={transmission}
           engine={engine}
+          campings={campings}
         />
       )}
-      {activeTab === 'reviews' && <ModalReviews />}
+      {activeTab === 'reviews' && <ModalReviews campings={campings} />}
     </Modal>
   );
 };
