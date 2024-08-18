@@ -1,3 +1,17 @@
 .filtersLocationSection {
   margin-bottom: 32px;
 }
+
+.filtersLocationTitle {
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(16, 24, 40, 0.6);
+  margin-bottom: 8px;
+}
+
+.locationInput {
+  padding: 18px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  width: 100%;
+}
