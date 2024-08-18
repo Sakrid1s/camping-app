@@ -1,0 +1,20 @@
+.header {
+  padding: 20px;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navListItem {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+
+.active {
+  color: #e44848;
+}

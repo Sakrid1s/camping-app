@@ -11,10 +11,12 @@ const FavoritesPage = lazy(() =>
 );
 
 import './App.css';
+import Navigation from './components/navigation/Navigation.jsx';
 
 function App() {
   return (
     <Container>
+      <Navigation />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
