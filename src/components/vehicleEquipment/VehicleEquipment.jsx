@@ -6,7 +6,7 @@ const VehicleEquipment = () => {
     <div className={css.equipmentSection}>
       <h2 className={css.equipmentTitle}>VehicleEquipment</h2>
       <ul className={css.equipmentList}>
-        <VehicleIcon name={'ac'} label="AC" />
+        <VehicleIcon name={'conditioner'} label="AC" />
         <VehicleIcon name={'automatic'} label="Automatic" />
         <VehicleIcon name={'kitchen'} label="Kitchen" />
         <VehicleIcon name={'tv'} label="TV" />
