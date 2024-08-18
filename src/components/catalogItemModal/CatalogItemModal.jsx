@@ -1,37 +1,37 @@
-import ShowMoreButton from '../showMoreButton/ShowMoreButton.jsx';
+import Modal from 'react-modal';
 import icons from '../../images/icons/icons.svg';
-import css from './CatalogItem.module.css';
-import Categories from '../categories/Categories.jsx';
-import { useState } from 'react';
-import CatalogItemModal from '../catalogItemModal/CatalogItemModal.jsx';
+import css from './CatalogItemModal.module.css';
+import { useEffect } from 'react';
 
-const CatalogItem = ({ campings }) => {
-  const {
-    gallery,
-    name,
-    price,
-    rating,
-    reviews,
-    location,
-    description,
-    details,
-    adults,
-    transmission,
-    engine,
-  } = campings;
+const CatalogItemModal = ({
+  isOpen,
+  onClose,
+  gallery,
+  name,
+  price,
+  rating,
+  reviews,
+  location,
+  description,
+}) => {
+  useEffect(() => {
+    // Забороняє скролінг фону при відкритті модалки
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+    // Відновлює скролінг фону при закритті модалки
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
 
   return (
-    <li className={css.catalogItem}>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      appElement={document.getElementById('root')}
+      className={css.modalContent}
+      overlayClassName={css.modalOverlay}
+    >
       <div className={css.catalogImageContainer}>
         <img
           src={gallery[0]}
@@ -70,27 +70,12 @@ const CatalogItem = ({ campings }) => {
           </div>
         </div>
         <p className={css.catalogItemDescription}>{description}</p>
-        <Categories
-          details={details}
-          adults={adults}
-          transmission={transmission}
-          engine={engine}
-        />
-        <ShowMoreButton onClick={handleOpenModal} />
-        <CatalogItemModal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          gallery={gallery}
-          name={name}
-          price={price}
-          rating={rating}
-          reviews={reviews}
-          location={location}
-          description={description}
-        />
+        <button onClick={onClose} className={css.closeButton}>
+          Close
+        </button>
       </div>
-    </li>
+    </Modal>
   );
 };
 
-export default CatalogItem;
+export default CatalogItemModal;
