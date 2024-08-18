@@ -1,3 +1,49 @@
 .modalReviewList {
   max-width: 430px;
 }
+
+.reviewItem {
+  margin-bottom: 24px;
+}
+
+.userReview {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.starList {
+  display: flex;
+}
+
+.userAvatarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background-color: #f2f4f7;
+}
+
+.userAvatar {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #e44848;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: #101828;
+  margin-bottom: 4px;
+}
+
+.userComment {
+  font-weight: 400;
+  font-size: 16px;
+  color: #475467;
+}

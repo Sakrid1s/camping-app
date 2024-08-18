@@ -24,16 +24,16 @@ const ModalReviewItem = ({ campings }) => {
     <ul className={css.modalReviewList}>
       {reviews.map(({ reviewer_name, reviewer_rating, comment }, index) => (
         <li key={index} className={css.reviewItem}>
-          <div>
-            <div>
-              <span>{reviewer_name[0]}</span>
+          <div className={css.userReview}>
+            <div className={css.userAvatarContainer}>
+              <span className={css.userAvatar}>{reviewer_name[0]}</span>
             </div>
             <div>
-              <h3>{reviewer_name}</h3>
-              <ul>{renderStars(reviewer_rating)}</ul>
+              <h3 className={css.userName}>{reviewer_name}</h3>
+              <ul className={css.starList}>{renderStars(reviewer_rating)}</ul>
             </div>
           </div>
-          <p>{comment}</p>
+          <p className={css.userComment}>{comment}</p>
         </li>
       ))}
     </ul>
