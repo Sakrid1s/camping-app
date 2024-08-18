@@ -1,3 +1,47 @@
 .homeSection {
   text-align: center;
 }
+
+.homeTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.titleDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.mainInfo {
+  margin-bottom: 20px;
+}
+
+.homeSubtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #101828;
+  margin-bottom: 15px;
+}
+
+.homeFeatures {
+  margin-bottom: 10px;
+}
+
+.homeFeaturesSubtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.homeSubtitleDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}

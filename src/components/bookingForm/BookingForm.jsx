@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid';
 import SendButton from '../sendButton/SendButton';
 import css from './BookingForm.module.css';
 
-// Validation schema
 const validationSchema = Yup.object({
   name: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
