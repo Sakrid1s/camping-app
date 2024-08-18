@@ -7,7 +7,7 @@ const initialState = {
   isError: null,
   page: 1,
   itemsPerPage: 4,
-  favorites: [], // New state to store favorite item IDs
+  favorites: [],
 };
 
 const isPending = action =>

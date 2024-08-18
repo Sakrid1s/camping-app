@@ -6,3 +6,4 @@ export const selectItemsPerPage = state => state.campings.itemsPerPage;
 export const selectHasMoreItems = state =>
   state.campings.page * state.campings.itemsPerPage <
   state.campings.items.length;
+export const selectFavorites = state => state.campings.favorites;
