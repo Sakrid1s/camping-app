@@ -87,13 +87,17 @@ const CatalogItemModal = ({
       <div className={css.modalAdditionalInfo}>
         <button
           onClick={() => handleTabClick('features')}
-          className={css.modalAdditionalFeaturesButton}
+          className={`${css.modalAdditionalFeaturesButton} ${
+            activeTab === 'features' ? css.activeTab : ''
+          }`}
         >
           Features
         </button>
         <button
           onClick={() => handleTabClick('reviews')}
-          className={css.modalAdditionalReviewButton}
+          className={`${css.modalAdditionalReviewButton} ${
+            activeTab === 'reviews' ? css.activeTab : ''
+          }`}
         >
           Reviews
         </button>
