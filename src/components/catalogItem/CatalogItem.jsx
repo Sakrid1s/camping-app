@@ -13,6 +13,9 @@ const CatalogItem = ({ campings }) => {
     location,
     description,
     details,
+    adults,
+    transmission,
+    engine,
   } = campings;
 
   return (
@@ -55,7 +58,12 @@ const CatalogItem = ({ campings }) => {
           </div>
         </div>
         <p className={css.catalogItemDescription}>{description}</p>
-        <Categories details={details} />
+        <Categories
+          details={details}
+          adults={adults}
+          transmission={transmission}
+          engine={engine}
+        />
         <ShowMoreButton />
       </div>
     </li>
