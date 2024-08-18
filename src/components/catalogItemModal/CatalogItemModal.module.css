@@ -125,3 +125,22 @@
   height: 1px;
   background-color: rgba(16, 24, 40, 0.2);
 }
+
+.modalAdditionalFeaturesButton {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  background-color: transparent;
+  padding: 0;
+  margin-right: 40px;
+}
+
+.modalAdditionalReviewButton {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  background-color: transparent;
+  padding: 0;
+}

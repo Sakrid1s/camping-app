@@ -1,0 +1,7 @@
+.modalFeaturesSection {
+  display: flex;
+}
+
+.categoriesVehicle {
+  max-width: 430px;
+}

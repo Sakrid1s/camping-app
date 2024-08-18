@@ -1,7 +1,9 @@
 import Modal from 'react-modal';
 import icons from '../../images/icons/icons.svg';
 import css from './CatalogItemModal.module.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import ModalFeatures from '../modalFeatures/ModalFeatures.jsx';
+import ModalReviews from '../modalReviews/ModalReviews.jsx';
 
 const CatalogItemModal = ({
   isOpen,
@@ -13,16 +15,24 @@ const CatalogItemModal = ({
   reviews,
   location,
   description,
+  details,
+  adults,
+  transmission,
+  engine,
 }) => {
+  const [activeTab, setActiveTab] = useState(null);
+
   useEffect(() => {
-    // Забороняє скролінг фону при відкритті модалки
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
 
-    // Відновлює скролінг фону при закритті модалки
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [isOpen]);
+
+  const handleTabClick = tabName => {
+    setActiveTab(prevTab => (prevTab === tabName ? null : tabName));
+  };
 
   return (
     <Modal
@@ -74,9 +84,29 @@ const CatalogItemModal = ({
       </div>
       <p className={css.modalDescription}>{description}</p>
       <div className={css.modalAdditionalInfo}>
-        <button>Features</button>
-        <button>Reviews</button>
+        <button
+          onClick={() => handleTabClick('features')}
+          className={css.modalAdditionalFeaturesButton}
+        >
+          Features
+        </button>
+        <button
+          onClick={() => handleTabClick('reviews')}
+          className={css.modalAdditionalReviewButton}
+        >
+          Reviews
+        </button>
       </div>
+
+      {activeTab === 'features' && (
+        <ModalFeatures
+          details={details}
+          adults={adults}
+          transmission={transmission}
+          engine={engine}
+        />
+      )}
+      {activeTab === 'reviews' && <ModalReviews />}
     </Modal>
   );
 };

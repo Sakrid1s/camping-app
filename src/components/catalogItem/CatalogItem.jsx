@@ -87,6 +87,10 @@ const CatalogItem = ({ campings }) => {
           reviews={reviews}
           location={location}
           description={description}
+          details={details}
+          adults={adults}
+          transmission={transmission}
+          engine={engine}
         />
       </div>
     </li>
