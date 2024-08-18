@@ -1,3 +1,7 @@
+.equipmentSection {
+  margin-bottom: 32px;
+}
+
 .equipmentTitle {
   font-weight: 600;
   font-size: 20px;
@@ -15,4 +19,10 @@
   width: 100%;
   height: 1px;
   background-color: rgba(16, 24, 40, 0.1);
+}
+
+.equipmentList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }

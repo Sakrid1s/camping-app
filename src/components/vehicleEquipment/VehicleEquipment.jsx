@@ -1,16 +1,16 @@
-import css from './VehicleEquipment.module.css';
 import VehicleIcon from '../vehicleIcon/VehicleIcon';
+import css from './VehicleEquipment.module.css';
 
 const VehicleEquipment = () => {
   return (
-    <div>
+    <div className={css.equipmentSection}>
       <h2 className={css.equipmentTitle}>VehicleEquipment</h2>
-      <ul>
-        <VehicleIcon name={'ac'} />
-        <VehicleIcon name={'kitchen'} />
-        <VehicleIcon name={'ac'} />
-        <VehicleIcon name={'ac'} />
-        <VehicleIcon name={'ac'} />
+      <ul className={css.equipmentList}>
+        <VehicleIcon name={'ac'} label="AC" />
+        <VehicleIcon name={'automatic'} label="Automatic" />
+        <VehicleIcon name={'kitchen'} label="Kitchen" />
+        <VehicleIcon name={'tv'} label="TV" />
+        <VehicleIcon name={'shower'} label="Shower/WC" />
       </ul>
     </div>
   );
