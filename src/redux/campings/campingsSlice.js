@@ -7,6 +7,7 @@ const initialState = {
   isError: null,
   page: 1,
   itemsPerPage: 4,
+  favorites: [], // New state to store favorite item IDs
 };
 
 const isPending = action =>
@@ -36,6 +37,14 @@ const campingsSlice = createSlice({
     resetPage: state => {
       state.page = 1;
     },
+    addFavorite: (state, action) => {
+      if (!state.favorites.includes(action.payload)) {
+        state.favorites.push(action.payload);
+      }
+    },
+    removeFavorite: (state, action) => {
+      state.favorites = state.favorites.filter(id => id !== action.payload);
+    },
   },
   extraReducers: builder => {
     builder
@@ -43,11 +52,11 @@ const campingsSlice = createSlice({
         state.isLoading = false;
         state.items = action.payload;
       })
-
       .addMatcher(isPending, pendingReducer)
       .addMatcher(isRejected, rejectedReducer);
   },
 });
 
-export const { loadMore, resetPage } = campingsSlice.actions;
+export const { loadMore, resetPage, addFavorite, removeFavorite } =
+  campingsSlice.actions;
 export const campingsReducer = campingsSlice.reducer;

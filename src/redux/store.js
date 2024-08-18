@@ -15,7 +15,6 @@ import { campingsReducer } from './campings/campingsSlice';
 const persistConfig = {
   key: 'campings',
   storage,
-  //   whitelist: ['token'],
 };
 
 const persistedReducer = persistReducer(persistConfig, campingsReducer);

@@ -1,9 +1,14 @@
-import ShowMoreButton from '../showMoreButton/ShowMoreButton.jsx';
-import icons from '../../images/icons/icons.svg';
-import css from './CatalogItem.module.css';
-import Categories from '../categories/Categories.jsx';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import {
+  addFavorite,
+  removeFavorite,
+} from '../../redux/campings/campingsSlice';
 import CatalogItemModal from '../catalogItemModal/CatalogItemModal.jsx';
+import css from './CatalogItem.module.css';
+import icons from '../../images/icons/icons.svg';
+import Categories from '../categories/Categories.jsx';
+import ShowMoreButton from '../showMoreButton/ShowMoreButton.jsx';
 
 const CatalogItem = ({ campings }) => {
   const {
@@ -18,16 +23,22 @@ const CatalogItem = ({ campings }) => {
     adults,
     transmission,
     engine,
+    _id,
   } = campings;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useDispatch();
+  const favorites = useSelector(state => state.campings.favorites);
+  const isFavorite = favorites.includes(_id);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+  const handleFavoriteToggle = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(_id));
+    } else {
+      dispatch(addFavorite(_id));
+    }
   };
 
   return (
@@ -44,11 +55,21 @@ const CatalogItem = ({ campings }) => {
           <h2 className={css.catalogItemTitle}>{name}</h2>
           <div className={css.catalogPriceFavorite}>
             <p className={css.catalogItemPrice}>€{price}</p>
-            <button type="button" className={css.catalogItemFavoriteButton}>
+            <button
+              type="button"
+              className={css.catalogItemFavoriteButton}
+              onClick={handleFavoriteToggle}
+            >
               <svg
                 width="24"
                 height="24"
-                className={css.catalogItemFavoriteIcon}
+                className={`${css.catalogItemFavoriteIcon} ${
+                  isFavorite ? css.favorite : ''
+                }`}
+                style={{
+                  stroke: isFavorite ? '#e44848' : '#101828',
+                  fill: isFavorite ? '#e44848' : 'transparent',
+                }}
               >
                 <use href={`${icons}#icon-like`} />
               </svg>
