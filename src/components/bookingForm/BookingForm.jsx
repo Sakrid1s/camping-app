@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import SendButton from '../sendButton/SendButton';
 import css from './BookingForm.module.css';
 
+// Validation schema
 const validationSchema = Yup.object({
   name: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
@@ -21,8 +22,9 @@ const BookingForm = () => {
     comment: '',
   };
 
-  const handleSubmit = values => {
-    console.log('Form data:', values);
+  const handleSubmit = (values, { resetForm }) => {
+    resetForm();
+    alert('You have successfully booked a camp!');
   };
 
   return (
