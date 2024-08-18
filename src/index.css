@@ -1,10 +1,42 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/Inter-Regular/Inter-Regular.eot')
+      format('embedded-opentype'),
+    url('./assets/Inter-Regular/Inter-Regular.ttf') format('truetype'),
+    url('./assets/Inter-Regular/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/Inter-Medium/Inter-Medium.eot') format('embedded-opentype'),
+    url('./assets/Inter-Medium/Inter-Medium.ttf') format('truetype'),
+    url('./assets/Inter-Medium/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/Inter-SemiBold/Inter-SemiBold.eot')
+      format('embedded-opentype'),
+    url('./assets/Inter-SemiBold/Inter-SemiBold.ttf') format('truetype'),
+    url('./assets/Inter-SemiBold/Inter-SemiBold.woff2') format('woff2');
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #101828;
   background-color: #ffffff;
 }
@@ -36,10 +68,30 @@ address {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input {
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

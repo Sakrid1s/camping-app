@@ -27,12 +27,18 @@ const CatalogItem = ({ campings }) => {
       <div>
         <div className={css.catalogItemMainInfo}>
           <h2 className={css.catalogItemTitle}>{name}</h2>
-          <p className={css.catalogItemPrice}>€{price}</p>
-          <button type="button" className={css.catalogItemFavoriteButton}>
-            <svg width="24" height="24" className={css.catalogItemFavoriteIcon}>
-              <use href={`${icons}#icon-like`} />
-            </svg>
-          </button>
+          <div className={css.catalogPriveFavorite}>
+            <p className={css.catalogItemPrice}>€{price}</p>
+            <button type="button" className={css.catalogItemFavoriteButton}>
+              <svg
+                width="24"
+                height="24"
+                className={css.catalogItemFavoriteIcon}
+              >
+                <use href={`${icons}#icon-like`} />
+              </svg>
+            </button>
+          </div>
         </div>
         <div className={css.catalogItemSupInfo}>
           <svg width="16" height="16" className={css.catalogItemStarIcon}>

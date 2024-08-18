@@ -44,8 +44,10 @@ const CatalogPage = () => {
       {isLoading && <Loader />}
       {error && <p>Error: {error}</p>}
       <Filters />
-      <CatalogList campings={displayedItems} />
-      {hasMoreItems && <LoadMoreButton onClick={handleLoadMore} />}
+      <div className={css.catalogContent}>
+        <CatalogList campings={displayedItems} />
+        {hasMoreItems && <LoadMoreButton onClick={handleLoadMore} />}
+      </div>
     </section>
   );
 };

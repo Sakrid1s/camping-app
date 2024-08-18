@@ -21,6 +21,7 @@
 .catalogItemMainInfo {
   display: flex;
   margin-bottom: 8px;
+  justify-content: space-between;
 }
 
 .catalogItemTitle {
@@ -28,7 +29,12 @@
   font-size: 24px;
   line-height: 1.25;
   color: #101828;
-  margin-right: 248px;
+}
+
+.catalogPriveFavorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .catalogItemPrice {
@@ -40,9 +46,6 @@
 }
 
 .catalogItemFavoriteButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: transparent;
   border: none;
 }
